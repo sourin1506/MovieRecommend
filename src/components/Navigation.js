@@ -23,12 +23,18 @@ export default function Navigation() {
                             <img src="https://fontmeme.com/permalink/220418/88de467c18875bb500bd49c6a1182077.png" onClick={() => navigate('/SearchBox')} height="55" style={{ marginTop: 4 }} sx={{ flexGrow: 1 }}></img>
                         </Typography>
 
-                        <button className='signin-button'>
+                        {
+                            islog?"":
+                            <button className='signin-button'>
                             <Link to="/" className="link">Signin</Link>
                         </button>
-                        <button className='signin-button' style={{ marginLeft: 20 }}>
+                        }
+                        {
+                            islog?"":
+                            <button className='signin-button' style={{ marginLeft: 20 }}>
                             <Link to="/Register" className="link" >Signup</Link>
                         </button>
+                        }
                         {
                             islog ?
                                 <button className='signin-button' style={{ marginLeft: 20 }}>

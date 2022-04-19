@@ -72,7 +72,7 @@ function LoginPage() {
                 console.log(name);
                 setlog(true);
                 navigate('/SearchBox');
-            } else console.log('not matched');
+            } else alert('not matched');
         } catch {
             alert('Fill up the details');
         }

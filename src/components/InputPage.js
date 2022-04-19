@@ -42,10 +42,14 @@ export default function InputPage() {
 
     const getdetail = () => {
         //console.log("changing recommend file")
+        const url1 = `http://mysterious-meadow-02585.herokuapp.com/movie?title=${moviedata}`
         const url = `http://127.0.0.1:5000/movie?title=${moviedata}`
         fetch(url, {
             method: "GET"
-        }).then((resp) => resp.json()).then((data) => { setrecommend(data.Title); console.log("recomend changed") });
+        }).then((resp) => 
+            resp.json())
+        .then((data) => { setrecommend(data.Title); console.log("recomend changed") })
+        .catch((err) => console.log("failed"));
 
 
     }
