@@ -14,7 +14,7 @@ In this step the data (ratings.csv and movies.csv) was analyzed and then the req
 (vi)Adding Average Rating & Total Number of User Rated a Particular Movie as a new feature
 
 Backend
-The goal of the flask backend is to create an ML powered REST API to recommend a list of movies. Machine learning models can’t be used in real life applications like mobile apps or websites or desktop clients directly and hence the need of a robust application comes into picture. For this we used: 
+The goal of the flask backend is to create an ML powered REST API to recommend a list of movies. Machine learning models can’t be used in real life applications like mobile  app or websites or desktop clients directly and hence the need of a robust application comes into picture. For this we used: 
 ● ML Recommendation Model 
 ● Flask : a web framework in Python that provides you with tools, libraries and technologies that allow you to build a web application. 
 ● Heroku : PaaS Hosting platform.
