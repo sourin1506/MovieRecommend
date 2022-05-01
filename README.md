@@ -47,12 +47,13 @@ Frontend:
 Working on the UI Design of the websit our goal is, thinks in user experience as well as the visual presentation. The front-end presents data and provides users the facility to interact with apps and websites. It is an important and integral part of app/web development services.
 
 ![image](https://user-images.githubusercontent.com/63972296/166150554-72b71ca1-bb83-424f-b484-a1b75638ff0b.png)
+![image](https://user-images.githubusercontent.com/63972296/166150705-619e2299-baca-48d5-ac60-f50f6117b200.png)
 
 ![image](https://user-images.githubusercontent.com/63972296/166150524-466aba5d-b419-4483-9a96-45cb02a3c7d6.png)
 
 ![image](https://user-images.githubusercontent.com/63972296/166150589-f05ea27d-c3d1-41b2-a8d9-f195676919aa.png)
 
-![Uploading image.png…]()
+
 
 
 
