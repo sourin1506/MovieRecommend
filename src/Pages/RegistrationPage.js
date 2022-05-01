@@ -119,13 +119,18 @@ export default function RegistrationPage() {
             noerror = 0;
         }
         //console.log(clicked)
+        console.log("exting")
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         clicked = 1;
         validateForm();
+        console.log(errormsg.firstname)
+
+
         if (noerror == 0) {
+
             addUsers();
             alert('Data Successfully stored in FireBase ');
             setuser({
@@ -135,6 +140,8 @@ export default function RegistrationPage() {
                 password: '',
             });
         }
+        else
+            alert("fill up the details")
     };
 
     return (

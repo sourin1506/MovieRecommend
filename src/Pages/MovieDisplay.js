@@ -1,19 +1,17 @@
 import React, { useState, useContext } from "react";
 
 import styled from "styled-components";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import MovieCard from "../components/MovieCard";
 import MovieCardDisplay from "../components/MovieCardDisplay";
 import { MovieDataContext } from "../ContextApi/MovieDataContext";
 import NotFoundPage from "../components/NotFoundPage";
-
-
+import CircularProgress from "@mui/material/CircularProgress";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
 
 const MovieListContainer = styled.div`
   display: flex;
@@ -21,7 +19,7 @@ const MovieListContainer = styled.div`
   flex-wrap: wrap;
   padding: 30px;
   gap: 25px;
-  justify-content: space-evenly;;
+  justify-content: space-evenly; ;
 `;
 const Placeholder = styled.img`
   width: 120px;
@@ -31,31 +29,36 @@ const Placeholder = styled.img`
 `;
 
 function MovieDisplay() {
+  const [selectedMovie, onMovieSelect] = useState();
+  const { moviedetail } = useContext(MovieDataContext);
+  const navigate = useNavigate();
 
-    const [selectedMovie, onMovieSelect] = useState();
-    const { moviedetail } = useContext(MovieDataContext);
-    const navigate = useNavigate();
-
-
-    return (
-        <Container>
-            {moviedetail.length==0?<NotFoundPage/>:console.log(moviedetail.length)}
-            {selectedMovie && <MovieCardDisplay selectedMovie={selectedMovie} onMovieSelect={onMovieSelect} />}
-            <MovieListContainer>
-                {moviedetail ? (
-                    moviedetail.map((movie, index) => (
-                        <MovieCard
-                            key={index}
-                            movie={movie}
-                            onMovieSelect={onMovieSelect}
-                        />
-                    ))
-                ) : (
-                    <Placeholder src="/react-movie-app/movie-icon.svg" />
-                )}
-            </MovieListContainer>
-        </Container>
-    );
+  return (
+    <Container>
+      {moviedetail.length == 0 ? (
+        <NotFoundPage />
+      ) : (
+        console.log(moviedetail.length)
+      )}
+      {selectedMovie && (
+        <MovieCardDisplay
+          selectedMovie={selectedMovie}
+          onMovieSelect={onMovieSelect}
+        />
+      )}
+      <MovieListContainer>
+        {moviedetail
+          ? moviedetail.map((movie, index) => (
+              <MovieCard
+                key={index}
+                movie={movie}
+                onMovieSelect={onMovieSelect}
+              />
+            ))
+          : console.log("Loading MD")}
+      </MovieListContainer>
+    </Container>
+  );
 }
 
 export default MovieDisplay;

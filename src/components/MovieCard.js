@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
+import Button from "@mui/material/Button";
 const MovieContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -37,24 +40,28 @@ const MovieInfo = styled.span`
   text-overflow: ellipsis;
 `;
 const MovieCard = (props) => {
-    const { Title, Year, imdbID, Type, Poster } = props.movie[0];
+  const { Title, Year, imdbID, Type, Poster } = props.movie[0];
 
-    return (
-
+  return (
+    <>
+      {props ? (
         <MovieContainer
-            onClick={() => {
-                props.onMovieSelect(Title);
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
+          onClick={() => {
+            props.onMovieSelect(Title);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
         >
-
-            <CoverImage src={Poster} alt={Title} />
-            <MovieName>{Title}</MovieName>
-            <InfoColumn>
-                <MovieInfo>Year : {Year}</MovieInfo>
-                <MovieInfo>Type : {Type}</MovieInfo>
-            </InfoColumn>
+          <CoverImage src={Poster} alt={Title} />
+          <MovieName>{Title}</MovieName>
+          <InfoColumn>
+            <MovieInfo>Year : {Year}</MovieInfo>
+            <MovieInfo>Type : {Type}</MovieInfo>
+          </InfoColumn>
         </MovieContainer>
-    );
+      ) : (
+        console.log("Loading")
+      )}
+    </>
+  );
 };
 export default MovieCard;
